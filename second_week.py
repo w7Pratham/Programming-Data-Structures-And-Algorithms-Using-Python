@@ -33,3 +33,35 @@ def repfree(s):
       list1.append(s[i])
       flag = True
   return(flag)
+
+"""
+A list of numbers is said to be a hill if it consists of an ascending sequence followed by a descending sequence, where each of the sequences is of 
+length at least two. Similarly, a list of numbers is said to be a valley if it consists of an descending sequence followed by an ascending sequence.
+You can assume that consecutive numbers in the input sequence are always different from each other.
+
+Write a Python function hillvalley(l) that takes a list l of integers and returns True if it is a hill or a valley, and False otherwise.
+"""
+def hillvalley(seq):
+    is_dec, is_inc = False, False
+    inflections = 0
+    for i in range(len(seq)-1):
+        if inflections > 1:
+            # Early stop if more than 1 inflection
+            return False
+        right = seq[i+1]
+        middle = seq[i]
+        diff = right - middle
+        if diff > 0:
+            if is_dec:
+                inflections += 1
+            is_inc = True
+            is_dec = False
+        elif diff < 0:
+            if is_inc:
+                inflections += 1
+            is_dec = True
+            is_inc = False
+    if inflections == 1:
+        return True
+    return False
+
