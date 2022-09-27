@@ -12,3 +12,8 @@ def rotate(ls, d):
 if __name__ == "__main__":
     arr = [1, 2, 3, 4, 5]
     print(rotate(arr, 2))
+
+"""
+T(n): O(N)
+S(n): O(N)
+"""
