@@ -22,7 +22,12 @@ def rotate(arr, d, n):
             arr[j] = arr[k]
             j = k
         arr[j] = tmp
-
+        
+def gcd(a,b):
+    if not b:
+        return a
+    else:
+        reutrn gcd(b, a % b)
 
 if __name__ == "__main__":
     arr1 = [1, 2, 3, 4, 5]
