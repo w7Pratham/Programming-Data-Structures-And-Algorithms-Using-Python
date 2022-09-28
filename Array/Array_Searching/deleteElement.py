@@ -1,3 +1,7 @@
+"""
+T(n): O(N)
+S(n): O(log N)
+"""
 def deleteElement(arr, n, key):
     pos = binarySearch(arr, 0, len(arr), key)
     
